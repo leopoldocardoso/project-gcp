@@ -1,0 +1,9 @@
+---
+- name: Update VMs GCP
+  hosts: all
+
+  tasks:
+  - name: Update Ubuntu Linux
+    ansible.builtin.apt:
+      name: "*"
+      state: latest

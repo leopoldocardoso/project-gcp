@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meu-site-web
+  labels:
+    app: meu-site-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meu-site-web
+  template:
+    metadata:
+      labels:
+        app: meu-site-web
+    spec:
+      containers:
+      - name: meu-site-web
+        image: us-central1-docker.pkg.dev/devops-464620/gcr-project-gcp/meu-site-web:latest
+        ports:
+        - containerPort: 80
