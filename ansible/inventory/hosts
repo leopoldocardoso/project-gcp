@@ -1,7 +1,7 @@
 [gcp]
-104.197.231.169
+35.224.9.68
 [gcp:vars]
-ansible_ssh_user=leopoldo
-ansible_ssh_private_key_file=~/.ssh/personal_gcp
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/gcp_personal
 ansible_port=22
 #ansible_python_interpreter=/usr/bin/python3.11

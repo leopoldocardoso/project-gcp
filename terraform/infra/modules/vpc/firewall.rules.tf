@@ -1,4 +1,4 @@
-resource "google_compute_firewall" "allow_ssh" {
+resource "google_compute_firewall" "vpn_allow_ssh" {
   name    = "allow-ssh"
   network = google_compute_network.this.id
 
@@ -12,8 +12,6 @@ resource "google_compute_firewall" "allow_ssh" {
     ports    = ["22"]
   }
 
-  target_tags = ["ssh-access"]
-  depends_on = [
-    google_compute_network.this
-  ]
+  target_tags = ["ssh-access", "vm-vpn"]
+  depends_on = [ google_compute_network.this ]
 }

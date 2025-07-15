@@ -133,7 +133,7 @@ resource "google_container_node_pool" "prod_node_pool" {
     }
 
     tags = ["gke-node-prod"]
-  }
+   }
 
 depends_on = [google_container_cluster.cluster_gke]
 

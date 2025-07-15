@@ -27,13 +27,14 @@ module "gke" {
 
   project_id = var.project_id
   region     = var.region
-
-
-  depends_on = [module.vpc]
+  depends_on = [ module.vpc ]
 }
 
-# module "gcr_artifact" {
-#   source = "./modules/gcr-artifact"
-#   project_id = var.project_id
-#   region     = var.region
-# }
+module "gcr-artifact" {
+  source     = "./infra/modules/gcr-artifact"
+}
+
+module "instances" {
+  source     = "./infra/modules/instances"
+  depends_on = [ module.vpc ]
+}
